@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SlidingTabLayout.AndroidSlidingTabLayoutDemo">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转"
+        android:id="@+id/btn_slidTab"/>
+    <yutiantian.mylibrary.SlidingTabLayout.SlidingTabLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/sliding_tabs">
+    </yutiantian.mylibrary.SlidingTabLayout.SlidingTabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/viewpage"
+        android:background="@color/white"></android.support.v4.view.ViewPager>
+</LinearLayout>
