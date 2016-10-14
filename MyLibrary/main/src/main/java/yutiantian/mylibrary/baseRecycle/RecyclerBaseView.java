@@ -112,7 +112,7 @@ public class RecyclerBaseView extends AppCompatActivity {
                 dataBean.setHeadMsg(list.size()/20+"");
                 dataBean.setItem("aa" + list.size());
                 list.add(dataBean);
-                if(list.size()>62){
+                if(list.size()>63){
                     mAdapter.hasMore=false;
                     break;
                 }
