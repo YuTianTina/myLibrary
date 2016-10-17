@@ -14,6 +14,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         mContext=this;
+        //测试
 //        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
 //            View decorView=getWindow().getDecorView();
 //            int option=View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
