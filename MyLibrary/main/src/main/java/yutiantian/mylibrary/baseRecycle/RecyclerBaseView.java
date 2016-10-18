@@ -120,5 +120,6 @@ public class RecyclerBaseView extends AppCompatActivity {
         }
         mAdapter.notifyDataSetChanged();
         //tag test
+        //tag
     }
 }
