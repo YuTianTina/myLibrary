@@ -42,7 +42,7 @@ public class RecyclerBaseView extends AppCompatActivity {
         LinearLayoutManager ll=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(ll);
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST,R.drawable.divider));
-        mAdapter=new BaseRecyclerAdapter<DataBean>(this, recyclerView, R.layout.recycleritem, list, new BaseRecyclerAdapter.OnBingHoldViewListener() {
+        mAdapter=new BaseRecyclerAdapter<>(this, recyclerView, R.layout.recycleritem, list, new BaseRecyclerAdapter.OnBingHoldViewListener() {
             @Override
             public void bindHoldView(ViewHolder holder, int position) {
                 holder.setText(R.id.tv_left,  "");
@@ -105,7 +105,6 @@ public class RecyclerBaseView extends AppCompatActivity {
 
 
     private void initData() {
-        int length=list.size();
         for (int j = 0; j < 2; j++) {
             for (int i = 0; i < 20; i++) {
                 DataBean dataBean = new DataBean();
