@@ -13,9 +13,9 @@ import yutiantian.mylibrary.R;
 /**
  * Created by Tina on 2016/9/14.
  */
-public  class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
+public  class BaseRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
     protected Context mContext;
-    protected List<T> mLists;
+    protected List<?> mLists;
     protected RecyclerView mRecyclerView;
     private OnLoadMoreListener mOnLoadMoreListener;
 //    private  LayoutInflater inflater;
@@ -43,7 +43,7 @@ public  class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
         void bindHoldView(ViewHolder holder,int position);
     }
     protected OnBingHoldViewListener mOnBingHoldViewListener;
-    public BaseRecyclerAdapter(Context context,RecyclerView recyclerView,int layoutID,List<T> list,OnBingHoldViewListener onBingHoldViewListener){
+    public BaseRecyclerAdapter(Context context,RecyclerView recyclerView,int layoutID,List<?> list,OnBingHoldViewListener onBingHoldViewListener){
         mContext=context;
         mRecyclerView=recyclerView;
         mLists=list;

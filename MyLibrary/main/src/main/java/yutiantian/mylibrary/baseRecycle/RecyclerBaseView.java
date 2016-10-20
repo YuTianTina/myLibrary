@@ -42,7 +42,7 @@ public class RecyclerBaseView extends AppCompatActivity {
         LinearLayoutManager ll=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(ll);
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST,R.drawable.divider));
-        mAdapter=new BaseRecyclerAdapter<>(this, recyclerView, R.layout.recycleritem, list, new BaseRecyclerAdapter.OnBingHoldViewListener() {
+        mAdapter=new BaseRecyclerAdapter(this, recyclerView, R.layout.recycleritem, list, new BaseRecyclerAdapter.OnBingHoldViewListener() {
             @Override
             public void bindHoldView(ViewHolder holder, int position) {
                 holder.setText(R.id.tv_left,  "");
