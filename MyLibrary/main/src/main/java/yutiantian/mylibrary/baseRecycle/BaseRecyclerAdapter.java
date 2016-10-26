@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -57,8 +58,11 @@ public  class BaseRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
                     super.onScrolled(recyclerView, dx, dy);
                     int totalItemCount = linearLayoutManager.getItemCount();
                     int lastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
-                    if(totalItemCount<=lastVisibleItemPosition+row&&hasMore&&!isLoading){
+                    if(/*totalItemCount<=lastVisibleItemPosition+row*/
+                        recyclerView.getAdapter().getItemCount()>1&&lastVisibleItemPosition>=recyclerView.getAdapter().getItemCount()-1
+                            &&hasMore&&!isLoading){
                         if(mOnLoadMoreListener!=null){
+                            Toast.makeText(mContext, "loadmore"+totalItemCount+"-"+lastVisibleItemPosition, Toast.LENGTH_SHORT).show();
                             mLists.add(null);//null值为分页加载页
                             recyclerView.getAdapter().notifyDataSetChanged();
                             mOnLoadMoreListener.onLoadMoreRequest();

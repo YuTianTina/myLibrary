@@ -59,16 +59,19 @@ public class RecyclerBaseView extends AppCompatActivity {
         mAdapter.setmOnLoadMoreListener(new BaseRecyclerAdapter.OnLoadMoreListener() {
             @Override
             public void onLoadMoreRequest() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mAdapter.finishLoadMore();
-                        initData();
-                        stickyItemDecoration.setmList(list);
-//                        mAdapter.notifyDataSetChanged();
-                        Toast.makeText(RecyclerBaseView.this, "load more", Toast.LENGTH_SHORT).show();
-                    }
-                },2000);
+                mAdapter.finishLoadMore();
+                initData();
+                stickyItemDecoration.setmList(list);
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        mAdapter.finishLoadMore();
+//                        initData();
+//                        stickyItemDecoration.setmList(list);
+////                        mAdapter.notifyDataSetChanged();
+////                        Toast.makeText(RecyclerBaseView.this, "load more", Toast.LENGTH_SHORT).show();
+//                    }
+//                },5000);
             }
         });
         mAdapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
